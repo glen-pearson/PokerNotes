@@ -27,57 +27,61 @@ Gui Show, x0 y0 w170 h790, Poker Notes
 return
 
 CopyTAG:
-    Clipboard := " - Cash Game: Balanced"
+    CopyNote("Cash Game: Balanced")
     return
 
 CopyFromEP:
-    Clipboard := " - Cash Game: Tight Preflop"
+    CopyNote("Cash Game: Tight Preflop")
     return
 
 CopyFromBTN:
-    Clipboard := " - Cash Game: Tight Preflop 3Bet Range"
+    CopyNote("Cash Game: Tight Preflop 3Bet Range")
     return
 
 CopySBvsUTG:
-    Clipboard := " - Cash Game: Tight Overfolds"
+    CopyNote("Cash Game: Tight Overfolds")
     return
 
 CopySBvsHJ:
-    Clipboard := " - Cash Game: Tight Passive"
+    CopyNote("Cash Game: Tight Passive")
     return
 
 CopySBvsCO:
-    Clipboard := " - Cash Game: Loose Preflop"
+    CopyNote("Cash Game: Loose Preflop")
     return
 
 CopySBvsBTN:
-    Clipboard := " - Cash Game: 3Bets Wide"
+    CopyNote("Cash Game: 3Bets Wide")
     return
 
 CopyBBvsUTG:
-    Clipboard := " - Cash Game: Loose Overcalls"
+    CopyNote("Cash Game: Loose Overcalls")
     return
 
 CopyBBvsHJ:
-    Clipboard := " - Cash Game: Aggressive"
+    CopyNote("Cash Game: Aggressive")
     return
 
 CopyBBvsCO:
-    Clipboard := " - Cash Game: Maniac"
+    CopyNote("Cash Game: Maniac")
     return
 
 Copy4BetsWide:
-    Clipboard := " - Cash Game: 4Bets Wide"
+    CopyNote("Cash Game: 4Bets Wide")
     return
 
 Copy5BetsWide:
-    Clipboard := " - Cash Game: 5Bets Wide"
+    CopyNote("Cash Game: 5Bets Wide")
     return
 
 CopyBluffsWide:
-    Clipboard := " - Cash Game: Bluffs Wide"
+    CopyNote("Cash Game: Bluffs Wide")
     return
 
+CopyNote(note) {
+    FormatTime, currentDate,, [MM/dd/yyyy HH:mm:ss]
+    Clipboard := currentDate " - " note
+}
 
 GuiClose:
     ExitApp
